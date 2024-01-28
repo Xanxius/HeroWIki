@@ -17,20 +17,24 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans overflow-x-hidden">
+    <body class="font-sans antialiased">
+        <x-banner />
 
-        <x-header />
-        {{-- make component header!!!!!!^ --}}
+        <div class="min-h-screen bg-gray-100">
+            @livewire('navigation-menu')
 
-        <div class="min-h-screen">
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
 
             <!-- Page Content -->
-            <main class="w-full h-full">
-                <section class="bg-slate-50 w-full h-[70vh] bg-cover bg-center">
-                    <div class="bg-black bg-opacity-30 w-full h-full">
-                        @yield('content')
-                    </div>
-                </section>
+            <main>
+                {{ $slot }}
             </main>
         </div>
 

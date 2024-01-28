@@ -19,6 +19,9 @@
     </head>
     <body class="font-sans overflow-x-hidden">
 
+        <x-header />
+        {{-- make component header!!!!!!^ --}}
+
         <div class="min-h-screen">
 
             <!-- Page Content -->
